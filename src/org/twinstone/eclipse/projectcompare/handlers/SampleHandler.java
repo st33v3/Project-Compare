@@ -40,7 +40,9 @@ public class SampleHandler extends AbstractHandler {
 			Shell shell = HandlerUtil.getActiveShell(event);
 			SelectProjectDialog spd = new SelectProjectDialog(shell, exclude);
 			if (Dialog.OK==spd.open()) {
-				MessageDialog.openInformation(shell, "Zdarec", "Project selected:" + spd.getSelectedProject());
+				Object[] result = spd.getResult();
+				if (result==null || result.length!=1) return null;
+				MessageDialog.openInformation(shell, "Zdarec", "Project selected:" + result[0]);
 			}
 		}
 		return null;
