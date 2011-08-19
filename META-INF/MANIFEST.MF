@@ -4,7 +4,9 @@ Bundle-Name: Project Compare
 Bundle-SymbolicName: org.twinstone.eclipse.projectcompare; singleton:=true
 Bundle-Activator: org.twinstone.eclipse.projectcompare.Activator
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.7.100",
+ org.eclipse.ui.ide
 Bundle-Version: 0.0.0
 Bundle-Vendor: Štěpán Mík
 Bundle-ActivationPolicy: lazy
