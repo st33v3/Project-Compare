@@ -1,5 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Project-Compare
-Bundle-SymbolicName: Project-Compare
-Bundle-Version: 1.0.0.qualifier
+Bundle-Name: Project Compare
+Bundle-SymbolicName: org.twinstone.eclipse.projectcompare; singleton:=true
+Bundle-Activator: org.twinstone.eclipse.projectcompare.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-Version: 0.0.0
+Bundle-Vendor: Štěpán Mík
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
