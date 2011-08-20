@@ -50,5 +50,16 @@
 		    </action>
 		 </objectContribution>
    </extension>
- 	
+
+	<extension
+	     point = "org.eclipse.ui.propertyPages">
+	        <page
+               class="org.twinstone.eclipse.projectcompare.ui.PropertyPage"
+               id="org.twinstone.eclipse.projectcompare.PropertyPage"
+               name="Counterpart Compare"
+               adaptable="true"
+               objectClass="org.eclipse.core.resources.IProject"
+               selectionFilter="single">
+	        </page>
+	</extension>	 	
 </plugin>
