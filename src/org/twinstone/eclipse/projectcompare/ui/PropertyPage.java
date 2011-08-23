@@ -39,6 +39,7 @@ import org.eclipse.ui.IWorkbenchPropertyPage;
 import org.eclipse.ui.model.WorkbenchContentProvider;
 import org.eclipse.ui.model.WorkbenchLabelProvider;
 import org.twinstone.eclipse.projectcompare.Activator;
+import org.twinstone.eclipse.projectcompare.RenameItem;
 
 public class PropertyPage extends org.eclipse.ui.dialogs.PropertyPage implements IWorkbenchPropertyPage {
 

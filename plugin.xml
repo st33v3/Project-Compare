@@ -61,5 +61,14 @@
                objectClass="org.eclipse.core.resources.IProject"
                selectionFilter="single">
 	        </page>
-	</extension>	 	
+	</extension>
+ <extension
+       point="org.eclipse.search.searchPages">
+    <page
+          class="org.twinstone.eclipse.projectcompare.ui.DifferenceSearchPage"
+          id="org.twinstone.eclipse.projectcompare.searchpage"
+          label="Differences"
+          showScopeSection="false">
+    </page>
+ </extension>	 	
 </plugin>

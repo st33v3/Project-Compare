@@ -1,4 +1,4 @@
-package org.twinstone.eclipse.projectcompare.ui;
+
 
 import java.util.ArrayList;
 import java.util.List;

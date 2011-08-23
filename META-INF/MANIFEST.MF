@@ -8,7 +8,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources;bundle-version="3.7.100",
  org.eclipse.ui.ide,
  org.eclipse.compare;bundle-version="3.5.200",
- org.eclipse.compare.core;bundle-version="3.5.200"
+ org.eclipse.compare.core;bundle-version="3.5.200",
+ org.eclipse.search;bundle-version="3.7.0"
 Bundle-Version: 0.0.0
 Bundle-Vendor: Štěpán Mík
 Bundle-ActivationPolicy: lazy

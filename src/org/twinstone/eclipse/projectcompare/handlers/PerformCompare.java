@@ -16,8 +16,8 @@ import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.PreferencesUtil;
 import org.twinstone.eclipse.projectcompare.Activator;
+import org.twinstone.eclipse.projectcompare.RenameItem;
 import org.twinstone.eclipse.projectcompare.ui.CompareInput;
-import org.twinstone.eclipse.projectcompare.ui.RenameItem;
 
 public class PerformCompare {
 	
