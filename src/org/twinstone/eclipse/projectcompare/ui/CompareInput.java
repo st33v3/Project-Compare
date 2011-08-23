@@ -1,23 +1,24 @@
 package org.twinstone.eclipse.projectcompare.ui;
 
+import java.io.ByteArrayInputStream;
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.compare.CompareConfiguration;
 import org.eclipse.compare.CompareEditorInput;
 import org.eclipse.compare.ResourceNode;
 import org.eclipse.compare.structuremergeviewer.Differencer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.ui.ISaveablesSource;
-import org.eclipse.ui.Saveable;
 
 //implements ISaveablesSource
 public class CompareInput extends CompareEditorInput  {
 
 	private IResource left;
 	private IResource right;
+	private ResourceNode rl;
+	private ResourceNode rr;
 	
 	public CompareInput(CompareConfiguration configuration, IResource left, IResource right) {
 		super(configuration);
@@ -27,8 +28,8 @@ public class CompareInput extends CompareEditorInput  {
 
 	@Override
 	protected Object prepareInput(IProgressMonitor monitor)	throws InvocationTargetException, InterruptedException {
-		ResourceNode rl = new ResourceNode(left);
-		ResourceNode rr = new ResourceNode(right);
+		rl = new ResourceNode(left);
+		rr = new ResourceNode(right);
 		Differencer d = new Differencer(); 
 		 Object diff = d.findDifferences(
 				 false,
@@ -43,7 +44,14 @@ public class CompareInput extends CompareEditorInput  {
 	@Override
 	public void saveChanges(IProgressMonitor monitor) throws CoreException {
 		super.saveChanges(monitor);
-		MessageDialog.openConfirm(null, "asd", "asdf");
+		if (rl!=null) {
+			byte[] content = rl.getContent();
+			((IFile)left).setContents(new ByteArrayInputStream(content), IFile.KEEP_HISTORY, monitor);
+		}
+		if (rr!=null) {
+			byte[] content = rr.getContent();
+			((IFile)right).setContents(new ByteArrayInputStream(content), IFile.KEEP_HISTORY, monitor);
+		}
 	}
 
 //	@Override
